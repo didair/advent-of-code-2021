@@ -1,15 +1,19 @@
 # Advent of Code 2021
 # Author: Andreas Ekström <didair>
 
-
 class Buddy:
 
     # Read data from file, and return the data as array
     def readDataFromFile(self, filename):
         with open(filename) as f:
-            output = [int(x) for x in f.readlines()];
+            data = [];
+            for x in f.readlines():
+                if (x.strip().isdigit()):
+                    data.append(int(x.strip()));
+                else:
+                    data.append(x);
 
-        return output;
+        return data;
 
     # Prints each argument and wraps it in a christmas-y theme
     def outputAnswer(self, *answers):
